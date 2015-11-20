@@ -1,0 +1,31 @@
+<div class="row">
+ <div class="container">
+
+		<table>
+
+			<% @actors.each do |actor| %>
+			<tr>
+				<td ><img class="image" src=<%= actor.image_url %> > </td>
+				<td>
+				<div class="chu">
+					<strong><p class="name"><%= actor.name.upcase %></p></strong>
+					<br>
+					<%= actor.bio %> 
+					<br>
+					<br>
+					<br> 
+					<% if actor.birth_date %>
+						<strong>DATE OF BIRTH:</strong> (<%= actor.birth_date %>)
+					<% else %>
+						<strong class="chi">DATE OF DEATH:</strong> (<%= actor.death_date %>) <%= actor.birth_place %> 
+					<% end %>
+					</div>
+					</td>
+				</tr>
+
+				<% end %>
+
+			</table>
+
+	</div>
+</div>
