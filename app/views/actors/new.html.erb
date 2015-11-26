@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-md-offset-2 text-center">
+
+
+      <p class="text-right">
+        <%= link_to "Back", root_path, class: "btn btn-primary btn-sm" %>
+      </p>
+
+
+      <%= form_for @actor do |f| %>
+
+
+        <div class="form-group">
+          <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.url_field :image_url, class: "form-control", placeholder: "Url Image" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.text_area :bio, class: "form-control", placeholder: "Biography ", :rows => 10  %>
+        </div>
+    </div>
+
+    <div class="col-sm-10 col-md-offset-1 text-center">
+        <div class="col-sm-6">
+          
+          <div class="radio">
+            <label>
+              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+              Alive
+            </label>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <%=f.date_field :birth_date, class: "form-control", placeholder: "Birth Date" %>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <%= f.text_field :birth_place, class: "form-control", placeholder: "Birth Place"%>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-sm-6">
+          <div class="radio">
+            <label>
+              <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked>
+              Dead
+            </label>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <%=f.date_field :death_date, class: "form-control", placeholder: "Death Date"%>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <%= f.text_field :death_place, class: "form-control", placeholder: "Death Place"%>
+            </div>
+          </div>
+          
+        </div>
+
+
+
+        <a class="btn btn-primary ">
+          <% f.submit%>Create Actor
+        </a>
+
+ 
+
+      <% end %>
+
+  </div>
+</div>
